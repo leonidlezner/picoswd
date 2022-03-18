@@ -28,6 +28,8 @@ sudo cat /dev/ttyAMA0
 
 ## Run openocd on Raspberry Pi
 
+OpenOCD should run on Raspberry Pi, so local GDB can connect to it.
+
 ```bash
 openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "bindto 0.0.0.0"
 ```
