@@ -1,7 +1,7 @@
 #!/bin/bash
 
 host="192.168.178.194:3333"
-build_name="build/main.elf"
+build_name="build_release/main.elf"
 
 #ssh $host "mkdir -p /home/pi/build/"
 #scp $build_name $host:/home/pi/build/

@@ -23,4 +23,4 @@ pico_enable_stdio_uart(main 1)
 # create map/bin/hex/uf2 file in addition to ELF.
 pico_add_extra_outputs(main)
 
-#set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -DDEBUG")

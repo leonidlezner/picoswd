@@ -15,6 +15,12 @@ int main()
 
     puts("Starting application...");
 
+    #ifdef DEBUG
+    puts("Debug");
+    #else
+    puts("Release");
+    #endif
+
     i2c.blah();
 
     gpio_init(LED_PIN);
