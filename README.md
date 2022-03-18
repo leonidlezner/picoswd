@@ -26,6 +26,17 @@ sudo stty 115200 -F /dev/ttyAMA0
 sudo cat /dev/ttyAMA0 
 ```
 
+## Build OpenOCD for Pico on Raspberry Pi
+
+```bash
+git clone https://github.com/raspberrypi/openocd.git --recursive --branch rp2040 --depth=1
+cd openocd
+./bootstrap
+./configure
+make -j4
+sudo make install
+```
+
 ## Run openocd on Raspberry Pi
 
 OpenOCD should run on Raspberry Pi, so local GDB can connect to it.
