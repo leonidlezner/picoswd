@@ -10,13 +10,14 @@ project(i2ctryout)
 pico_sdk_init()
 
 add_executable(main
-    src/main.c
+    src/main.cpp
+    src/i2c_demo.cpp
 )
 
 # Add pico_stdlib library which aggregates commonly used features
 target_link_libraries(main pico_stdlib)
 
-pico_enable_stdio_usb(main 1)
+pico_enable_stdio_usb(main 0)
 pico_enable_stdio_uart(main 1)
 
 # create map/bin/hex/uf2 file in addition to ELF.

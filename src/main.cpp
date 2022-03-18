@@ -1,24 +1,25 @@
 #include <stdio.h>
 #include "pico/stdlib.h"
-
-bool repeating_timer_callback(struct repeating_timer *t) {
-    printf("Repeat at %lld\n", time_us_64());
-    return true;
-}
+#include "i2c_demo.h"
 
 int main()
 {
+    i2c_demo i2c;
+
     const uint LED_PIN = PICO_DEFAULT_LED_PIN;
 
     setup_default_uart();
     stdio_init_all();
 
+    sleep_ms(500);
+
+    puts("Starting application...");
+
+    i2c.blah();
+
     gpio_init(LED_PIN);
 
     gpio_set_dir(LED_PIN, GPIO_OUT);
-
-    struct repeating_timer timer;
-    add_repeating_timer_ms(2000, repeating_timer_callback, NULL, &timer);
 
     int i = 0;
 
